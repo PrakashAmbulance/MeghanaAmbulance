@@ -1,0 +1,153 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #0b1220;
+
+  /* Deep navy / medical blue / white / emergency red accents */
+  --color-navy-950: #06111f;
+  --color-navy-900: #0a1a2e;
+  --color-navy-800: #0f2545;
+  --color-navy-700: #163358;
+  --color-navy-600: #1e4270;
+
+  --color-medblue-600: #1d6fd8;
+  --color-medblue-500: #2b83f0;
+  --color-medblue-400: #5aa2f5;
+  --color-medblue-100: #e7f1fe;
+  --color-medblue-50: #f2f8ff;
+
+  --color-emergency-700: #b91c1c;
+  --color-emergency-600: #dc2626;
+  --color-emergency-500: #ef4444;
+  --color-emergency-100: #fee2e2;
+
+  --color-ink-900: #0b1220;
+  --color-ink-700: #33415a;
+  --color-ink-500: #5b6b85;
+  --color-ink-300: #aab6c8;
+
+  --mobile-cta-height: 68px;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: "Plus Jakarta Sans", Inter, system-ui, -apple-system, sans-serif;
+
+  --color-navy-950: var(--color-navy-950);
+  --color-navy-900: var(--color-navy-900);
+  --color-navy-800: var(--color-navy-800);
+  --color-navy-700: var(--color-navy-700);
+  --color-navy-600: var(--color-navy-600);
+
+  --color-medblue-600: var(--color-medblue-600);
+  --color-medblue-500: var(--color-medblue-500);
+  --color-medblue-400: var(--color-medblue-400);
+  --color-medblue-100: var(--color-medblue-100);
+  --color-medblue-50: var(--color-medblue-50);
+
+  --color-emergency-700: var(--color-emergency-700);
+  --color-emergency-600: var(--color-emergency-600);
+  --color-emergency-500: var(--color-emergency-500);
+  --color-emergency-100: var(--color-emergency-100);
+
+  --color-ink-900: var(--color-ink-900);
+  --color-ink-700: var(--color-ink-700);
+  --color-ink-500: var(--color-ink-500);
+  --color-ink-300: var(--color-ink-300);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: "Plus Jakarta Sans", Inter, system-ui, -apple-system, sans-serif;
+}
+
+/* Reserve space for the persistent mobile emergency bar so content and the
+   footer are never hidden behind it. */
+body.has-mobile-cta {
+  padding-bottom: var(--mobile-cta-height);
+}
+@media (min-width: 768px) {
+  body.has-mobile-cta {
+    padding-bottom: 0;
+  }
+}
+
+/* Visible, high-contrast focus states for keyboard users */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+[tabindex]:focus-visible {
+  outline: 3px solid var(--color-medblue-500);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.container-page {
+  max-width: 80rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+@media (min-width: 640px) {
+  .container-page {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+.fade-up {
+  animation: fadeUp 0.6s ease both;
+}
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .fade-up {
+    animation: none;
+  }
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--color-navy-900);
+  color: white;
+  padding: 0.75rem 1.25rem;
+  z-index: 100;
+  border-radius: 0 0 8px 0;
+}
+.skip-link:focus {
+  left: 0;
+}
