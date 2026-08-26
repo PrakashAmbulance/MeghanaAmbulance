@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 export default function ServicesPage() {
   return (
     <>
-      <section className="bg-navy-950 py-14 text-white sm:py-20">
+      <section className="bg-navy-950 py-10 text-white sm:py-20">
         <div className="container-page text-center">
           <h1 className="text-3xl font-extrabold tracking-tight sm:text-4xl">
             Ambulance Services

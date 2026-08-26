@@ -54,7 +54,7 @@ export default function CoveragePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(coverageJsonLd) }}
       />
-      <section className="bg-navy-950 py-14 text-white sm:py-16">
+      <section className="bg-navy-950 py-10 text-white sm:py-14">
         <div className="container-page text-center">
           <h1 className="text-3xl font-extrabold tracking-tight sm:text-4xl">
             Ambulance Coverage in Bangalore

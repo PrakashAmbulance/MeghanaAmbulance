@@ -66,7 +66,7 @@ export default async function ServiceDetailPage({
         </ol>
       </nav>
 
-      <section className="bg-navy-950 py-14 text-white sm:py-16">
+      <section className="bg-navy-950 py-10 text-white sm:py-14">
         <div className="container-page">
           <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-white/10">
             <ServiceIcon name={service.icon} className="h-7 w-7" />
@@ -80,7 +80,7 @@ export default async function ServiceDetailPage({
               Subject to vehicle/equipment availability &mdash; please call to confirm
             </p>
           )}
-          <div className="mt-6 flex flex-wrap gap-3">
+          <div className="mt-6 grid grid-cols-2 gap-3 sm:flex sm:flex-wrap">
             <a
               href={buildTelUrl(business.phone)}
               className="inline-flex items-center gap-2 rounded-xl bg-emergency-600 px-6 py-3.5 text-sm font-bold text-white hover:bg-emergency-700"
@@ -99,7 +99,7 @@ export default async function ServiceDetailPage({
         </div>
       </section>
 
-      <section className="bg-white py-14 sm:py-16">
+      <section className="bg-white py-10 sm:py-14">
         <div className="container-page mx-auto max-w-2xl">
           <h2 className="text-xl font-bold text-navy-900">What to expect</h2>
           <ul className="mt-4 space-y-3">

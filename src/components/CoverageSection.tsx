@@ -130,7 +130,7 @@ export default function CoverageSection({ compact }: { compact?: boolean }) {
         </div>
 
         {/* Zone groups */}
-        <div className="mt-12 grid gap-6 sm:grid-cols-2">
+        <div className="mt-8 grid gap-6 sm:mt-12 sm:grid-cols-2">
           {zoneGroups.map((group) => {
             const areas = serviceAreas.filter((a) => group.zones.includes(a.zone));
             return (

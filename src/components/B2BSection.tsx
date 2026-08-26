@@ -29,7 +29,7 @@ export default function B2BSection() {
             Meghana Ambulance Service supports healthcare organizations with
             patient transportation and ambulance coordination. We work with:
           </p>
-          <ul className="mt-4 grid grid-cols-2 gap-2 text-sm text-white/80">
+          <ul className="mt-4 grid grid-cols-1 gap-2 text-sm text-white/80 sm:grid-cols-2">
             {targets.map((t) => (
               <li key={t} className="flex items-center gap-2 rounded-lg bg-white/5 px-3 py-2">
                 {t}
