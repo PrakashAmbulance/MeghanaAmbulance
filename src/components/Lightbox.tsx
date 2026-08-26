@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import Image from "@/components/StaticImage";
 import { useEffect, useCallback } from "react";
 import type { GalleryImage } from "@/lib/gallery";
 import { CloseIcon } from "@/components/icons";

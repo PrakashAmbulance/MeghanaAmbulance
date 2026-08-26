@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
+import Image from "@/components/StaticImage";
 import Link from "next/link";
 import { galleryImages } from "@/lib/gallery";
 import Lightbox from "@/components/Lightbox";

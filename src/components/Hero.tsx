@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import Image from "@/components/StaticImage";
 import Link from "next/link";
 import { useState, useEffect, useCallback } from "react";
 import { business, buildTelUrl, buildWhatsAppUrl } from "@/lib/business";
