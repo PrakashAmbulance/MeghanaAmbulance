@@ -67,7 +67,7 @@ export const metadata: Metadata = {
     images: ["/images/og-image.svg"],
   },
   icons: {
-    icon: "/images/logo.svg",
+    icon: "/images/logo.png",
   },
 };
 

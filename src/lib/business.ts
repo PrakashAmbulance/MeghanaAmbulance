@@ -69,7 +69,7 @@ export const business = {
 
   // ---- Site metadata -----------------------------------------------------
   siteUrl: "https://www.meghanaambulance.in", // PLACEHOLDER - update to the real production domain
-  logoPath: "/images/logo.svg",
+  logoPath: "/images/logo.png",
 
   // Availability. Client has stated 24/7 assistance; no specific opening
   // hours schema is published because none was supplied.
