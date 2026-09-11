@@ -8,9 +8,9 @@ export default function OrganizationJsonLd() {
     url: business.siteUrl,
     logo: `${business.siteUrl}${business.logoPath}`,
     image: [
-      `${business.siteUrl}/images/gallery/AmbulanceFront.jpg`,
-      `${business.siteUrl}/images/gallery/AmbulanceInterior.jpg`,
-      `${business.siteUrl}/images/gallery/AmbulanceRear.jpg`,
+      `${business.siteUrl}/images/gallery/ambulance-front-view-bangalore.jpg`,
+      `${business.siteUrl}/images/gallery/ambulance-interior-medical-equipment.jpg`,
+      `${business.siteUrl}/images/gallery/ambulance-rear-view-bangalore.jpg`,
     ],
     telephone: business.phoneIntl,
     openingHoursSpecification: {
@@ -31,11 +31,12 @@ export default function OrganizationJsonLd() {
     ],
     address: {
       "@type": "PostalAddress",
+      streetAddress: business.streetAddress,
       addressLocality: business.city,
       addressRegion: business.state,
+      postalCode: business.postalCode,
       addressCountry: business.countryCode,
     },
-    sameAs: [],
     hasOfferCatalog: {
       "@type": "OfferCatalog",
       name: "Ambulance Services",

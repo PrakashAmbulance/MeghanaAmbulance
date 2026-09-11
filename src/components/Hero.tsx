@@ -150,29 +150,29 @@ export default function Hero() {
           {slide.sub}
         </p>
 
-        {/* CTA buttons — 2-column grid on mobile, row on desktop */}
-        <div className="mt-4 grid grid-cols-2 gap-2 sm:mt-6 sm:flex sm:flex-wrap sm:gap-3">
+        {/* CTA buttons — hidden on mobile; the fixed bottom bar covers Call/WhatsApp/Request there */}
+        <div className="hidden md:mt-6 md:flex md:flex-wrap md:gap-3">
           <a
             href={buildTelUrl(business.phone)}
-            className="col-span-1 inline-flex items-center justify-center gap-2 rounded-xl bg-emergency-600 px-4 py-2.5 text-sm font-bold text-white shadow-lg shadow-emergency-700/40 transition-transform hover:-translate-y-0.5 hover:bg-emergency-700 sm:px-6 sm:py-3.5 sm:text-base"
+            className="inline-flex items-center justify-center gap-2 rounded-xl bg-emergency-600 px-6 py-3.5 text-base font-bold text-white shadow-lg shadow-emergency-700/40 transition-transform hover:-translate-y-0.5 hover:bg-emergency-700"
           >
-            <PhoneIcon className="h-4 w-4 sm:h-5 sm:w-5" />
+            <PhoneIcon className="h-5 w-5" />
             Call Now
           </a>
           <a
             href={buildWhatsAppUrl()}
             target="_blank"
             rel="noopener noreferrer"
-            className="col-span-1 inline-flex items-center justify-center gap-2 rounded-xl bg-[#25D366] px-4 py-2.5 text-sm font-bold text-white shadow-lg shadow-black/20 transition-transform hover:-translate-y-0.5 hover:brightness-95 sm:px-6 sm:py-3.5 sm:text-base"
+            className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#25D366] px-6 py-3.5 text-base font-bold text-white shadow-lg shadow-black/20 transition-transform hover:-translate-y-0.5 hover:brightness-95"
           >
-            <WhatsAppIcon className="h-4 w-4 sm:h-5 sm:w-5" />
+            <WhatsAppIcon className="h-5 w-5" />
             WhatsApp
           </a>
           <Link
             href="/contact#request-ambulance"
-            className="col-span-2 inline-flex items-center justify-center gap-2 rounded-xl border border-white/30 bg-white/10 px-4 py-2 text-sm font-semibold text-white backdrop-blur-sm transition-transform hover:-translate-y-0.5 hover:bg-white/20 sm:col-auto sm:border-2 sm:px-6 sm:py-3.5 sm:text-base sm:font-bold"
+            className="inline-flex items-center justify-center gap-2 rounded-xl border-2 border-white/30 bg-white/10 px-6 py-3.5 text-base font-bold text-white backdrop-blur-sm transition-transform hover:-translate-y-0.5 hover:bg-white/20"
           >
-            <AmbulanceRequestIcon className="h-4 w-4 sm:h-5 sm:w-5" />
+            <AmbulanceRequestIcon className="h-5 w-5" />
             Request Ambulance
           </Link>
         </div>

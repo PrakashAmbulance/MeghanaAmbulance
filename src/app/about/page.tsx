@@ -6,7 +6,17 @@ import { business } from "@/lib/business";
 
 export const metadata: Metadata = {
   title: "About Us",
-  description: `About ${business.name} — ambulance transportation support across Bangalore and long-distance journeys across India.`,
+  description: `About ${business.name} — a 24/7 ambulance provider in Bangalore with experienced drivers and staff support for emergencies and transfers.`,
+  keywords: [
+    "about Meghana Ambulance Service",
+    "ambulance company Bangalore",
+    "private ambulance service Bangalore",
+    "24/7 ambulance provider Bangalore",
+    "trusted ambulance service Bangalore",
+    "ambulance service near me",
+    "experienced ambulance drivers Bangalore",
+    "staff nurse ambulance Bangalore",
+  ],
   alternates: { canonical: "/about" },
 };
 

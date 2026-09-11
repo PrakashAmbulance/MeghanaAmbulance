@@ -3,12 +3,10 @@ import CoverageSection from "@/components/CoverageSection";
 import ContactTeaser from "@/components/ContactTeaser";
 import { business, serviceAreas } from "@/lib/business";
 
-const areaNames = serviceAreas.map((a) => a.name).join(", ");
-
 export const metadata: Metadata = {
-  title: "Ambulance Service Coverage Areas in Bangalore",
+  title: "Ambulance Coverage Bangalore",
   description:
-    `Meghana Ambulance Service covers 20 areas across Bangalore: ${areaNames}. Available 24/7 for emergency, ICU, hospital transfer, and long-distance ambulance journeys.`,
+    "Meghana Ambulance Service covers 20 areas across Bangalore — RR Nagar, Jayanagar, Koramangala, Whitefield & more. 24/7 emergency, ICU & long-distance ambulance.",
   keywords: [
     "ambulance coverage Bangalore",
     "ambulance service areas Bangalore",

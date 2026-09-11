@@ -15,7 +15,7 @@ export default function AmbulanceGallery({
   const images = compact ? galleryImages.slice(0, 4) : galleryImages;
 
   return (
-    <section id="gallery" className="bg-medblue-50/60 py-16 sm:py-20">
+    <section id="gallery" className="bg-slate-50 py-16 sm:py-20">
       <div className="container-page">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-2xl font-extrabold tracking-tight text-navy-900 sm:text-3xl">

@@ -7,7 +7,17 @@ import ContactForm from "@/components/forms/ContactForm";
 
 export const metadata: Metadata = {
   title: "Contact Us",
-  description: `Contact ${business.name} — call ${business.phoneDisplay} or ${business.secondaryPhoneDisplay}, message on WhatsApp, or request an ambulance online.`,
+  description: `Contact ${business.name} in Bangalore — call ${business.phoneDisplay} or ${business.secondaryPhoneDisplay}, message us on WhatsApp, or request an ambulance online. Available 24/7.`,
+  keywords: [
+    "ambulance contact number Bangalore",
+    "book ambulance Bangalore",
+    "ambulance phone number Bangalore",
+    "request ambulance online Bangalore",
+    "WhatsApp ambulance booking Bangalore",
+    "ambulance near me",
+    "ambulance customer care Bangalore",
+    "24/7 ambulance helpline Bangalore",
+  ],
   alternates: { canonical: "/contact" },
 };
 
@@ -23,7 +33,8 @@ export default function ContactPage() {
             </p>
           </div>
 
-          <div className="mx-auto mt-8 grid max-w-3xl grid-cols-1 gap-3 sm:grid-cols-3">
+          {/* Hidden on mobile — the fixed bottom bar covers Call/WhatsApp/Request there */}
+          <div className="mx-auto mt-8 hidden max-w-3xl gap-3 md:grid md:grid-cols-3">
             <a
               href={buildTelUrl(business.phone)}
               className="flex flex-col items-center gap-2 rounded-2xl bg-emergency-600 px-5 py-5 text-center font-bold hover:bg-emergency-700"

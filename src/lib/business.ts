@@ -11,6 +11,11 @@
 // statistical claim until the client supplies it.
 // ---------------------------------------------------------------------------
 
+export interface ServiceFaq {
+  question: string;
+  answer: string;
+}
+
 export interface Service {
   slug: string;
   name: string;
@@ -21,6 +26,12 @@ export interface Service {
   /** Show an "availability may vary" disclaimer on this service. */
   subjectToAvailability: boolean;
   icon: ServiceIconName;
+  /** Situations/patients this service is typically booked for. */
+  idealFor: string[];
+  /** Service-specific FAQs, shown on the service page and marked up as FAQPage schema. */
+  faqs: ServiceFaq[];
+  /** Slugs of other services to cross-link from this service's page. */
+  relatedSlugs: string[];
 }
 
 export type ServiceIconName =
@@ -63,13 +74,15 @@ export const business = {
   country: "India",
   countryCode: "IN",
   region: "Bangalore, Karnataka, India",
-  // No street address was supplied by the client. Do not fabricate one.
-  streetAddress: "", // PLACEHOLDER - add once client confirms
-  postalCode: "", // PLACEHOLDER
+  streetAddress: "50 Feet Main Rd, 1st Block, Hanumanthnagar, Banashankari 1st Stage",
+  postalCode: "560050",
 
   // ---- Site metadata -----------------------------------------------------
-  siteUrl: "https://www.meghanaambulance.in", // PLACEHOLDER - update to the real production domain
+  siteUrl: "https://www.meghanaambulance.in",
   logoPath: "/images/logo.png",
+
+  // Google Business Profile "write a review" short link.
+  googleReviewUrl: "https://g.page/r/CV2pUAUyqxqEEBM/review",
 
   // Availability. Client has stated 24/7 assistance; no specific opening
   // hours schema is published because none was supplied.
@@ -97,6 +110,34 @@ export const services: Service[] = [
     ],
     subjectToAvailability: false,
     icon: "emergency",
+    idealFor: [
+      "Road traffic accidents and other injuries",
+      "Sudden chest pain, breathing difficulty, or stroke symptoms",
+      "Medical emergencies at home, work, or in a public place",
+      "Any situation where a patient needs urgent transport to hospital",
+    ],
+    faqs: [
+      {
+        question: "How do I book an emergency ambulance in Bangalore right now?",
+        answer:
+          "Call " +
+          business.phoneDisplay +
+          " or " +
+          business.secondaryPhoneDisplay +
+          " directly — both lines are available 24/7. For a genuine emergency, always call rather than filling out a form online.",
+      },
+      {
+        question: "What information should I share when I call for an emergency ambulance?",
+        answer:
+          "Tell our team the patient's condition (conscious or unconscious, breathing normally or not, any visible injury), the exact pickup address with a nearby landmark, and the hospital you'd prefer, if you have one in mind.",
+      },
+      {
+        question: "Is staff nurse support available with the emergency ambulance?",
+        answer:
+          "Staff nurse assistance is coordinated for emergency trips. Mention the patient's condition when you call so our team can arrange support accordingly.",
+      },
+    ],
+    relatedSlugs: ["hospital-transfer", "long-distance-ambulance", "patient-transportation"],
   },
   {
     slug: "icu-ambulance",
@@ -113,6 +154,30 @@ export const services: Service[] = [
     ],
     subjectToAvailability: true,
     icon: "icu",
+    idealFor: [
+      "Critically ill patients who need continuous monitoring during transport",
+      "Inter-hospital transfer of patients on oxygen or ventilator support, subject to equipment availability",
+      "Discharge from ICU to a step-down facility or home",
+      "Transfers where the treating doctor has advised ICU-level transport",
+    ],
+    faqs: [
+      {
+        question: "What is an ICU ambulance and when is it needed?",
+        answer:
+          "An ICU ambulance is intended for patients who need a higher level of medical support during transport than a standard ambulance provides — for example, inter-hospital transfer of a critically ill patient. Availability depends on the vehicle and equipment on hand, so please call to confirm before booking.",
+      },
+      {
+        question: "Do I need a doctor's referral to book an ICU ambulance?",
+        answer:
+          "A referral isn't required to call us, but if the treating doctor has given specific instructions — oxygen requirement, monitoring needs, medication — share these when you call so our team can confirm suitability for your patient.",
+      },
+      {
+        question: "Can an ICU ambulance be arranged for a long-distance transfer?",
+        answer:
+          "Long-distance ICU-level transfers can be discussed, subject to availability. Call our team with the pickup and destination details and we'll confirm what can be arranged.",
+      },
+    ],
+    relatedSlugs: ["ccu-ambulance", "hospital-transfer", "emergency-ambulance"],
   },
   {
     slug: "nicu-ambulance",
@@ -128,6 +193,31 @@ export const services: Service[] = [
     ],
     subjectToAvailability: true,
     icon: "nicu",
+    idealFor: [
+      "Newborns being transferred between hospitals",
+      "Neonatal discharge transport home, once the baby has medical clearance",
+      "Cases where a paediatrician or NICU team has advised specialised transport",
+    ],
+    faqs: [
+      {
+        question: "What is a NICU ambulance used for?",
+        answer:
+          "A NICU ambulance is intended for neonatal transportation needs such as hospital-to-hospital transfer or a discharge journey home, subject to vehicle and equipment availability at the time of your request.",
+      },
+      {
+        question: "Should the hospital know before I book a NICU ambulance?",
+        answer:
+          "It helps if your baby's treating doctor or hospital is aware of the transfer plan in advance, so both ends can coordinate the handover smoothly.",
+      },
+      {
+        question: "How do I check if a NICU ambulance is available right now?",
+        answer:
+          "Call " +
+          business.phoneDisplay +
+          " and describe your requirement — our team will confirm vehicle and equipment availability before the booking is confirmed.",
+      },
+    ],
+    relatedSlugs: ["picu-ambulance", "hospital-transfer", "emergency-ambulance"],
   },
   {
     slug: "picu-ambulance",
@@ -143,6 +233,29 @@ export const services: Service[] = [
     ],
     subjectToAvailability: true,
     icon: "picu",
+    idealFor: [
+      "Children needing critical-care transport between hospitals",
+      "Paediatric discharge from PICU who still need monitored transport",
+      "Cases where a paediatric specialist has advised PICU-level transfer",
+    ],
+    faqs: [
+      {
+        question: "What is a PICU ambulance?",
+        answer:
+          "A PICU ambulance is intended for pediatric critical-care transportation needs, such as transferring a child between hospitals. Availability depends on the vehicle and equipment on hand — please call to confirm before booking.",
+      },
+      {
+        question: "What should I share with the team when booking for a child?",
+        answer:
+          "Share the child's age, current condition, and any monitoring or oxygen requirement the treating doctor has mentioned, along with the pickup and destination hospital.",
+      },
+      {
+        question: "Is PICU ambulance support available for discharge, not just emergencies?",
+        answer:
+          "Yes — PICU-level transport can be arranged for a monitored discharge journey as well as inter-hospital transfer, subject to availability.",
+      },
+    ],
+    relatedSlugs: ["nicu-ambulance", "ccu-ambulance", "emergency-ambulance"],
   },
   {
     slug: "ccu-ambulance",
@@ -158,6 +271,29 @@ export const services: Service[] = [
     ],
     subjectToAvailability: true,
     icon: "ccu",
+    idealFor: [
+      "Cardiac patients needing monitored transport between hospitals",
+      "Post-procedure discharge transport after a cardiac admission",
+      "Cases where a cardiologist has advised CCU-level transfer",
+    ],
+    faqs: [
+      {
+        question: "What is a CCU ambulance and who is it for?",
+        answer:
+          "A CCU ambulance is intended for cardiac-care patient transportation, such as inter-hospital transfer or a monitored discharge after a cardiac admission. Availability depends on the vehicle and equipment on hand — please call to confirm suitability for your patient.",
+      },
+      {
+        question: "Can CCU ambulance be booked for a scheduled hospital transfer?",
+        answer:
+          "Yes — share the pickup hospital, destination, and the patient's condition when you call, and our team will confirm availability and timing.",
+      },
+      {
+        question: "Do you coordinate with the receiving hospital?",
+        answer:
+          "Share the receiving hospital's details when you book — it helps our team and the destination hospital coordinate the handover.",
+      },
+    ],
+    relatedSlugs: ["icu-ambulance", "hospital-transfer", "emergency-ambulance"],
   },
   {
     slug: "hospital-transfer",
@@ -173,6 +309,29 @@ export const services: Service[] = [
     ],
     subjectToAvailability: false,
     icon: "transfer",
+    idealFor: [
+      "Moving a patient from one hospital to another for specialised treatment",
+      "Discharge from hospital to home",
+      "Transport to a diagnostic centre or follow-up appointment and back",
+    ],
+    faqs: [
+      {
+        question: "Can you transfer a patient between two hospitals in Bangalore?",
+        answer:
+          "Yes, hospital-to-hospital transfer is one of our core services. Share both hospital names and addresses when you call so we can plan the route and timing.",
+      },
+      {
+        question: "Do you help with discharge transport from hospital to home?",
+        answer:
+          "Yes, hospital-to-home transport is supported. Share the expected discharge time in advance where possible so we can plan the pickup.",
+      },
+      {
+        question: "Is a wheelchair or stretcher available for the transfer?",
+        answer:
+          "Let our team know the patient's mobility needs when booking so the right vehicle and support can be arranged.",
+      },
+    ],
+    relatedSlugs: ["patient-transportation", "long-distance-ambulance", "emergency-ambulance"],
   },
   {
     slug: "long-distance-ambulance",
@@ -188,6 +347,29 @@ export const services: Service[] = [
     ],
     subjectToAvailability: false,
     icon: "longDistance",
+    idealFor: [
+      "Patients travelling from Bangalore to their hometown for continued care",
+      "Inter-city hospital transfers across Karnataka and other states",
+      "Situations where road travel is preferred over flight for medical reasons",
+    ],
+    faqs: [
+      {
+        question: "How far can Meghana Ambulance Service travel from Bangalore?",
+        answer:
+          "We support journeys across Karnataka and other parts of India. Share your destination when you call so the route, duration, and requirements can be discussed and confirmed before departure.",
+      },
+      {
+        question: "Do you provide a nurse or attendant for long-distance trips?",
+        answer:
+          "Staff support for long-distance journeys is coordinated based on the patient's condition — mention this when you call so it can be arranged.",
+      },
+      {
+        question: "How early should I book a long-distance ambulance?",
+        answer:
+          "As early as possible once travel is planned, so our team has time to coordinate the vehicle, driver, and route in advance.",
+      },
+    ],
+    relatedSlugs: ["hospital-transfer", "patient-transportation", "icu-ambulance"],
   },
   {
     slug: "patient-transportation",
@@ -203,6 +385,31 @@ export const services: Service[] = [
     ],
     subjectToAvailability: false,
     icon: "patient",
+    idealFor: [
+      "Non-emergency transport for medical appointments or diagnostic visits",
+      "Discharge from hospital when an ambulance is preferred over a private vehicle",
+      "Elderly or mobility-limited patients who need supported transport",
+    ],
+    faqs: [
+      {
+        question: "Is patient transportation only for emergencies?",
+        answer:
+          "No — this service covers non-emergency transport such as medical appointments, hospital discharge, or transfer between locations.",
+      },
+      {
+        question: "Can I schedule patient transportation in advance?",
+        answer:
+          "Yes, call or WhatsApp our team with your preferred date and time and we'll confirm availability.",
+      },
+      {
+        question: "Which parts of Bangalore do you cover for patient transportation?",
+        answer:
+          "We cover 20 areas across Bangalore — check our coverage page or call " +
+          business.phoneDisplay +
+          " to confirm your location.",
+      },
+    ],
+    relatedSlugs: ["hospital-transfer", "emergency-ambulance", "long-distance-ambulance"],
   },
 ];
 
@@ -238,7 +445,7 @@ export const serviceAreas: ServiceArea[] = [
   { name: "Whitefield", slug: "whitefield", confirmed: true, zone: "East" },
 ];
 
-export const faqs: { question: string; answer: string }[] = [
+export const faqs: ServiceFaq[] = [
   {
     question: "How can I book an ambulance in Bangalore?",
     answer:
@@ -247,6 +454,13 @@ export const faqs: { question: string; answer: string }[] = [
       " or " +
       business.secondaryPhoneDisplay +
       " — both lines are available 24/7. You can also message us on WhatsApp or use the Request Ambulance form on this website. For emergencies, always call rather than filling a form.",
+  },
+  {
+    question: "How do I find an ambulance near me in Bangalore right now?",
+    answer:
+      "Call " +
+      business.phoneDisplay +
+      " and share your exact location with a nearby landmark — our team dispatches based on where you are, so you don't need to search for the nearest ambulance yourself. We cover 20 areas across Bangalore and are reachable 24/7.",
   },
   {
     question: "Which areas in Bangalore does Meghana Ambulance Service cover?",
@@ -334,4 +548,14 @@ export function buildWhatsAppUrl(customMessage?: string): string {
 
 export function buildTelUrl(number: string): string {
   return `tel:+91${number}`;
+}
+
+export const fullAddress = `${business.name}, ${business.streetAddress}, ${business.city} ${business.postalCode}`;
+
+export function buildGoogleMapsEmbedUrl(): string {
+  return `https://www.google.com/maps?q=${encodeURIComponent(fullAddress)}&output=embed`;
+}
+
+export function buildGoogleMapsDirectionsUrl(): string {
+  return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(fullAddress)}`;
 }

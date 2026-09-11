@@ -1,18 +1,26 @@
 "use client";
 
 import { useId, useState } from "react";
-import { faqs } from "@/lib/business";
+import { faqs as siteFaqs, type ServiceFaq } from "@/lib/business";
 import { ChevronDownIcon } from "@/components/icons";
 
-export default function FAQSection() {
+export default function FAQSection({
+  faqs = siteFaqs,
+  title = "Frequently Asked Questions",
+  sectionId = "faq",
+}: {
+  faqs?: ServiceFaq[];
+  title?: string;
+  sectionId?: string;
+}) {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
   const idBase = useId();
 
   return (
-    <section id="faq" className="bg-white py-16 sm:py-20">
+    <section id={sectionId} className="bg-white py-16 sm:py-20">
       <div className="container-page mx-auto max-w-3xl">
         <h2 className="text-center text-2xl font-extrabold tracking-tight text-navy-900 sm:text-3xl">
-          Frequently Asked Questions
+          {title}
         </h2>
         <div className="mt-8 divide-y divide-black/5 rounded-2xl border border-black/5">
           {faqs.map((faq, i) => {

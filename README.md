@@ -59,9 +59,6 @@ information before the site goes live:
   never named. Twenty placeholder entries are pre-created in
   `src/lib/business.ts`; replace `name` (and set `confirmed: true`) for each
   with the real locality names.
-- **`business.streetAddress` / `postalCode`** — no street address was
-  supplied, so none is shown or included in structured data. Add it once
-  confirmed.
 - **`business.email`** — no business email was supplied.
 - **`business.siteUrl`** — currently a placeholder domain
   (`https://www.meghanaambulance.in`). Update it to the real production

@@ -28,6 +28,30 @@ export function PhoneIcon(props: IconProps) {
   );
 }
 
+export function AmbulanceIcon(props: IconProps) {
+  return (
+    <Base {...props}>
+      <rect x="1.5" y="8.5" width="14" height="6.5" rx="1" />
+      <path d="M15.5 10.5h2.8l2.7 3v1.5h-5.5v-4.5Z" />
+      <path d="M6.5 11.75h4M8.5 9.75v4" />
+      <circle cx="6" cy="16.5" r="1.6" />
+      <circle cx="17" cy="16.5" r="1.6" />
+      <path d="M0.5 15.5h3.7M10.9 15.5h4.4M19.3 15.5h1.2" />
+    </Base>
+  );
+}
+
+export function SirenIcon(props: IconProps) {
+  return (
+    <Base {...props}>
+      <path d="M7 17v-2.5a5 5 0 0 1 10 0V17" />
+      <rect x="5" y="17" width="14" height="3" rx="1" />
+      <path d="M6.5 12.5h11" />
+      <path d="M12 3v2M8 4.5l1.2 1.8M16 4.5l-1.2 1.8" />
+    </Base>
+  );
+}
+
 export function WhatsAppIcon(props: IconProps) {
   return (
     <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" {...props}>

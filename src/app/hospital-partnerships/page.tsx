@@ -3,9 +3,19 @@ import B2BSection from "@/components/B2BSection";
 import { business } from "@/lib/business";
 
 export const metadata: Metadata = {
-  title: "Hospital & Healthcare Partnerships",
+  title: "Hospital Ambulance Partnerships",
   description:
-    "Meghana Ambulance Service partners with hospitals, nursing homes, clinics, diagnostic centres and healthcare institutions for patient transportation and ambulance coordination in Bangalore.",
+    "Meghana Ambulance Service partners with hospitals, nursing homes & clinics in Bangalore for patient transportation and ambulance coordination.",
+  keywords: [
+    "ambulance service for hospitals Bangalore",
+    "hospital ambulance tie-up Bangalore",
+    "ambulance partnership Bangalore",
+    "patient transport for hospitals",
+    "ambulance vendor for nursing homes",
+    "B2B ambulance service Bangalore",
+    "ambulance for diagnostic centres Bangalore",
+    "corporate ambulance tie-up Bangalore",
+  ],
   alternates: { canonical: "/hospital-partnerships" },
 };
 

@@ -1,3 +1,6 @@
+import StaticImage from "@/components/StaticImage";
+import { business } from "@/lib/business";
+
 const testimonials = [
   {
     name: "Priya S.",
@@ -60,6 +63,43 @@ function Stars({ count }: { count: number }) {
   );
 }
 
+function TestimonialCard({
+  t,
+  hidden,
+}: {
+  t: (typeof testimonials)[number];
+  hidden?: boolean;
+}) {
+  return (
+    <figure
+      aria-hidden={hidden}
+      className="mr-5 flex w-[19rem] shrink-0 flex-col rounded-2xl border border-black/5 bg-white p-6 shadow-sm sm:w-[22rem]"
+    >
+      <div className="flex items-center justify-between">
+        <Stars count={t.rating} />
+        <StaticImage
+          src="/images/Google_Favicon_2025.svg"
+          alt="Google"
+          width={16}
+          height={16}
+        />
+      </div>
+      <blockquote className="mt-4 flex-1 text-sm leading-relaxed text-ink-600">
+        &ldquo;{t.text}&rdquo;
+      </blockquote>
+      <figcaption className="mt-5 flex items-center gap-3 border-t border-black/5 pt-4">
+        <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-medblue-100 text-sm font-bold text-medblue-700">
+          {t.name.charAt(0)}
+        </div>
+        <div>
+          <p className="text-sm font-semibold text-navy-900">{t.name}</p>
+          <p className="text-xs text-ink-400">{t.location}, Bangalore</p>
+        </div>
+      </figcaption>
+    </figure>
+  );
+}
+
 export default function Testimonials() {
   const jsonLd = {
     "@context": "https://schema.org",
@@ -102,28 +142,30 @@ export default function Testimonials() {
             Real experiences from patients and families who relied on Meghana
             Ambulance Service during critical moments.
           </p>
+          <a
+            href={business.googleReviewUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-5 inline-flex items-center gap-2 rounded-full border border-black/10 bg-white px-4 py-2 text-sm font-bold text-navy-900 shadow-sm transition-colors hover:bg-black/[.02]"
+          >
+            <StaticImage
+              src="/images/Google_Favicon_2025.svg"
+              alt=""
+              width={18}
+              height={18}
+            />
+            Write a Review on Google
+          </a>
         </div>
+      </div>
 
-        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="marquee mt-10">
+        <div className="marquee-track py-1">
           {testimonials.map((t) => (
-            <figure
-              key={t.name}
-              className="flex flex-col rounded-2xl border border-black/5 bg-white p-6 shadow-sm"
-            >
-              <Stars count={t.rating} />
-              <blockquote className="mt-4 flex-1 text-sm leading-relaxed text-ink-600">
-                &ldquo;{t.text}&rdquo;
-              </blockquote>
-              <figcaption className="mt-5 flex items-center gap-3 border-t border-black/5 pt-4">
-                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-medblue-100 text-sm font-bold text-medblue-700">
-                  {t.name.charAt(0)}
-                </div>
-                <div>
-                  <p className="text-sm font-semibold text-navy-900">{t.name}</p>
-                  <p className="text-xs text-ink-400">{t.location}, Bangalore</p>
-                </div>
-              </figcaption>
-            </figure>
+            <TestimonialCard key={t.name} t={t} />
+          ))}
+          {testimonials.map((t) => (
+            <TestimonialCard key={`${t.name}-repeat`} t={t} hidden />
           ))}
         </div>
       </div>

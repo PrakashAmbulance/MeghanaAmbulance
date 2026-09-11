@@ -5,7 +5,16 @@ import ContactTeaser from "@/components/ContactTeaser";
 export const metadata: Metadata = {
   title: "Ambulance Gallery",
   description:
-    "View the Meghana Ambulance Service fleet — front, side, rear and interior views.",
+    "See the Meghana Ambulance Service fleet up close — front, side, rear and interior views. 24/7 ambulance service across Bangalore, available for booking now.",
+  keywords: [
+    "ambulance photos Bangalore",
+    "ambulance fleet Bangalore",
+    "AC ambulance Bangalore",
+    "advanced life support ambulance Bangalore",
+    "ambulance interior equipment",
+    "ambulance vehicle images Bangalore",
+    "private ambulance Bangalore gallery",
+  ],
   alternates: { canonical: "/gallery" },
 };
 

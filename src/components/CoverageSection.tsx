@@ -2,7 +2,7 @@ import Link from "next/link";
 import { serviceAreas, business, type Zone } from "@/lib/business";
 import { MapPinIcon } from "@/components/icons";
 
-const zoneConfig: Record<Zone, { label: string; color: string; bg: string; ring: string }> = {
+export const zoneConfig: Record<Zone, { label: string; color: string; bg: string; ring: string }> = {
   "West":              { label: "West",              color: "text-violet-700", bg: "bg-violet-50",    ring: "ring-violet-100" },
   "West/Central":      { label: "West / Central",    color: "text-violet-700", bg: "bg-violet-50",    ring: "ring-violet-100" },
   "North-West":        { label: "North-West",         color: "text-sky-700",    bg: "bg-sky-50",       ring: "ring-sky-100" },
@@ -14,7 +14,7 @@ const zoneConfig: Record<Zone, { label: string; color: string; bg: string; ring:
   "East":              { label: "East",               color: "text-amber-700",  bg: "bg-amber-50",    ring: "ring-amber-100" },
 };
 
-const zoneGroups: { label: string; zones: Zone[]; dotColor: string; badgeColor: string; badgeBg: string; borderColor: string }[] = [
+export const zoneGroups: { label: string; zones: Zone[]; dotColor: string; badgeColor: string; badgeBg: string; borderColor: string }[] = [
   {
     label: "West & Central-West",
     zones: ["West", "West/Central"],
@@ -50,31 +50,44 @@ const zoneGroups: { label: string; zones: Zone[]; dotColor: string; badgeColor: 
 ];
 
 export default function CoverageSection({ compact }: { compact?: boolean }) {
-  const displayAreas = compact ? serviceAreas.slice(0, 8) : serviceAreas;
-
   if (compact) {
     return (
       <section id="coverage" className="bg-white py-16 sm:py-20">
         <div className="container-page">
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-2xl font-extrabold tracking-tight text-navy-900 sm:text-3xl">
-              Ambulance Service Across Bangalore
+            <span className="inline-block rounded-full bg-medblue-50 px-3.5 py-1 text-xs font-semibold uppercase tracking-wide text-medblue-700 ring-1 ring-medblue-100">
+              Service Area
+            </span>
+            <h2 className="mt-3 text-2xl font-extrabold tracking-tight text-navy-900 sm:text-3xl">
+              Close By, Wherever You Are in Bangalore
             </h2>
             <p className="mt-3 text-ink-500">
-              Covering 20 areas across West, North, South, and East Bangalore — with long-distance journeys across India.
+              West, North, South, or East — we cover 20 areas across the city,
+              plus long-distance journeys across India.
             </p>
           </div>
 
-          <div className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
-            {displayAreas.map((area) => {
-              const cfg = zoneConfig[area.zone];
+          <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-4">
+            {zoneGroups.map((group) => {
+              const areas = serviceAreas.filter((a) => group.zones.includes(a.zone)).slice(0, 2);
               return (
                 <div
-                  key={area.slug}
-                  className={`flex items-center gap-2 rounded-xl border px-4 py-3 text-sm font-semibold ring-1 ${cfg.bg} ${cfg.ring} border-black/5 ${cfg.color}`}
+                  key={group.label}
+                  className={`rounded-2xl border bg-white p-4 shadow-sm ${group.borderColor}`}
                 >
-                  <MapPinIcon className="h-4 w-4 shrink-0" />
-                  <span className="truncate">{area.name}</span>
+                  <div className="mb-3 flex items-center gap-2">
+                    <span className={`h-2 w-2 shrink-0 rounded-full ${group.dotColor}`} />
+                    <h3 className={`text-xs font-bold uppercase tracking-wide ${group.badgeColor}`}>
+                      {group.label}
+                    </h3>
+                  </div>
+                  <div className="space-y-1.5">
+                    {areas.map((area) => (
+                      <p key={area.slug} className="truncate text-sm font-semibold text-ink-700">
+                        {area.name}
+                      </p>
+                    ))}
+                  </div>
                 </div>
               );
             })}

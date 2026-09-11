@@ -1,11 +1,21 @@
 import type { Metadata } from "next";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
+import AnnouncementBar from "@/components/AnnouncementBar";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import MobileEmergencyBar from "@/components/MobileEmergencyBar";
 import WhatsAppFloatButton from "@/components/WhatsAppFloatButton";
+import PartnerWithUsTab from "@/components/PartnerWithUsTab";
 import OrganizationJsonLd from "@/components/JsonLd";
 import { business } from "@/lib/business";
+
+const plusJakartaSans = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-sans",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(business.siteUrl),
@@ -27,6 +37,12 @@ export const metadata: Metadata = {
     "hospital transfer ambulance Bangalore",
     "patient transport Bangalore",
     "long distance ambulance Bangalore",
+    "book ambulance online Bangalore",
+    "ambulance booking Bangalore",
+    "private ambulance service Bangalore",
+    "ambulance phone number Bangalore",
+    "ambulance contact number Bangalore",
+    "AC ambulance Bangalore",
     "ambulance RR Nagar",
     "ambulance Rajarajeshwari Nagar",
     "ambulance Vijayanagar Bangalore",
@@ -58,41 +74,45 @@ export const metadata: Metadata = {
     siteName: business.name,
     title: `${business.name} | 24/7 Ambulance Service in Bangalore`,
     description: business.shortDescription,
-    images: [{ url: "/images/og-image.svg", width: 1200, height: 630 }],
+    images: [
+      {
+        url: "/images/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: `${business.name} — 24/7 Ambulance Service in Bangalore`,
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: `${business.name} | 24/7 Ambulance Service in Bangalore`,
     description: business.shortDescription,
-    images: ["/images/og-image.svg"],
-  },
-  icons: {
-    icon: "/images/logo.png",
+    images: ["/images/og-image.png"],
   },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en-IN" className="h-full antialiased">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
-          rel="stylesheet"
-        />
-      </head>
+    <html
+      lang="en-IN"
+      className={`h-full antialiased ${plusJakartaSans.variable}`}
+      data-scroll-behavior="smooth"
+    >
       <body className="has-mobile-cta flex min-h-full flex-col bg-white text-ink-900">
         <a href="#main-content" className="skip-link">
           Skip to main content
         </a>
         <OrganizationJsonLd />
-        <Header />
+        <div className="sticky top-0 z-40">
+          <AnnouncementBar />
+          <Header />
+        </div>
         <main id="main-content" className="flex-1">
           {children}
         </main>
         <Footer />
         <WhatsAppFloatButton />
+        <PartnerWithUsTab />
         <MobileEmergencyBar />
       </body>
     </html>

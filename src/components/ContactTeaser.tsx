@@ -4,7 +4,7 @@ import { PhoneIcon, WhatsAppIcon, AmbulanceRequestIcon } from "@/components/icon
 
 export default function ContactTeaser() {
   return (
-    <section className="bg-gradient-to-br from-navy-900 to-navy-700 py-16 text-white sm:py-20">
+    <section className="hidden bg-gradient-to-br from-navy-900 to-navy-700 py-16 text-white sm:py-20 md:block">
       <div className="container-page text-center">
         <h2 className="text-2xl font-extrabold tracking-tight sm:text-3xl">
           Need an Ambulance?

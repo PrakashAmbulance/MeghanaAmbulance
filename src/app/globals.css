@@ -62,6 +62,36 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Ambulance beacon strobe: hard red/blue flash, like a real emergency light. */
+@keyframes siren-strobe {
+  0%, 45% {
+    background-color: var(--color-emergency-600);
+    box-shadow: 0 0 12px 3px rgba(220, 38, 38, 0.7);
+  }
+  50%, 95% {
+    background-color: var(--color-medblue-600);
+    box-shadow: 0 0 12px 3px rgba(29, 111, 216, 0.7);
+  }
+  100% {
+    background-color: var(--color-emergency-600);
+    box-shadow: 0 0 12px 3px rgba(220, 38, 38, 0.7);
+  }
+}
+
+.siren-beacon {
+  animation: siren-strobe 1s steps(1, end) infinite;
+}
+
+/* Ambulance hazard-stripe accent — a thin diagonal caution-stripe bar used
+   as a section divider on service pages. */
+.hazard-stripes {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    var(--color-emergency-600) 0 14px,
+    #ffffff 14px 28px
+  );
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -135,6 +165,54 @@ select:focus-visible,
 @media (prefers-reduced-motion: reduce) {
   .fade-up {
     animation: none;
+  }
+}
+
+/* Horizontal auto-scrolling, looping review carousel. The track renders its
+   items twice back-to-back and scrolls exactly one copy's width, which
+   makes the loop seamless. Pauses on hover/focus so it's readable. */
+.marquee {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 5%,
+    black 95%,
+    transparent
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 5%,
+    black 95%,
+    transparent
+  );
+}
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 50s linear infinite;
+}
+.marquee:hover .marquee-track,
+.marquee:focus-within .marquee-track {
+  animation-play-state: paused;
+}
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+  }
+  .marquee {
+    overflow-x: auto;
+    -webkit-mask-image: none;
+    mask-image: none;
   }
 }
 
