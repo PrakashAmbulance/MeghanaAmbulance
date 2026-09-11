@@ -64,7 +64,7 @@ export const metadata: Metadata = {
     "ambulance Indiranagar",
     "ambulance Marathahalli",
     "ambulance Whitefield",
-    "Meghana Ambulance Service",
+    "Meghana Lifecare Ambulance Service",
   ],
   alternates: { canonical: "/" },
   openGraph: {

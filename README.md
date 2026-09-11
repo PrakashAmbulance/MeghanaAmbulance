@@ -1,6 +1,6 @@
-# Meghana Ambulance Service — Website
+# Meghana Lifecare Ambulance Service — Website
 
-A production-ready Next.js website for Meghana Ambulance Service, Bangalore.
+A production-ready Next.js website for Meghana Lifecare Ambulance Service, Bangalore.
 Built with Next.js (App Router), TypeScript, and Tailwind CSS.
 
 ## What's included
@@ -90,7 +90,7 @@ To use the real photos:
 2. Update the `src` paths in `src/lib/gallery.ts` and in
    `src/components/Hero.tsx` to point at the new files.
 3. Keep the descriptive `alt` text pattern already in place (e.g.
-   `"Meghana Ambulance Service ambulance in Bangalore"`) — it matters for
+   `"Meghana Lifecare Ambulance Service ambulance in Bangalore"`) — it matters for
    both accessibility and SEO.
 
 `next/image` will automatically generate responsive, lazy-loaded variants

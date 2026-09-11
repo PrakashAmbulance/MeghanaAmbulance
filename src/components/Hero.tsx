@@ -9,7 +9,7 @@ const slides = [
   {
     src: "/images/hero/hero-ambulance-india.jpg",
     srcMobile: "/images/hero/hero-ambulance-india-mobile.jpg",
-    alt: "Indian advanced life support ambulance on road — Meghana Ambulance Service Bangalore",
+    alt: "Indian advanced life support ambulance on road — Meghana Lifecare Ambulance Service Bangalore",
     headline: "24/7 Ambulance Service in Bangalore",
     sub: "Experienced drivers & staff nurse support — available any time, day or night.",
     position: "object-center",
@@ -17,7 +17,7 @@ const slides = [
   {
     src: "/images/hero/hero-city-road.jpg",
     srcMobile: "/images/hero/hero-city-road-mobile.jpg",
-    alt: "Ambulance responding on city highway — Meghana Ambulance Service Bangalore",
+    alt: "Ambulance responding on city highway — Meghana Lifecare Ambulance Service Bangalore",
     headline: "Emergency & ICU Ambulance, Always Ready",
     sub: "Hospital transfers, long-distance journeys & emergency response across 20 areas of Bangalore.",
     position: "object-center",
@@ -25,7 +25,7 @@ const slides = [
   {
     src: "/images/hero/hero-ambulance-fleet.jpg",
     srcMobile: "/images/hero/hero-ambulance-fleet-mobile.jpg",
-    alt: "Ambulance fleet with Star of Life — Meghana Ambulance Service Bangalore",
+    alt: "Ambulance fleet with Star of Life — Meghana Lifecare Ambulance Service Bangalore",
     headline: "Hospital Transfers & Patient Transport",
     sub: "Hospital-to-hospital, hospital-to-home, and long-distance journeys across Karnataka & India.",
     position: "object-center",

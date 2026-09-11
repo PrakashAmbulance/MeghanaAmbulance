@@ -5,7 +5,7 @@ import ContactTeaser from "@/components/ContactTeaser";
 export const metadata: Metadata = {
   title: "Ambulance Gallery",
   description:
-    "See the Meghana Ambulance Service fleet up close — front, side, rear and interior views. 24/7 ambulance service across Bangalore, available for booking now.",
+    "See the Meghana Lifecare Ambulance Service fleet up close — front, side, rear and interior views. 24/7 ambulance service across Bangalore, available for booking now.",
   keywords: [
     "ambulance photos Bangalore",
     "ambulance fleet Bangalore",

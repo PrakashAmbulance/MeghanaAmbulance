@@ -8,7 +8,7 @@ import { AmbulanceIcon } from "@/components/icons";
 export const metadata: Metadata = {
   title: "Ambulance Services in Bangalore",
   description:
-    "Emergency, ICU, NICU, PICU, CCU ambulance, hospital transfer, long-distance and patient transportation services from Meghana Ambulance Service, Bangalore.",
+    "Emergency, ICU, NICU, PICU, CCU ambulance, hospital transfer, long-distance and patient transportation services from Meghana Lifecare Ambulance Service, Bangalore.",
   keywords: [
     "ambulance services Bangalore",
     "types of ambulance service Bangalore",

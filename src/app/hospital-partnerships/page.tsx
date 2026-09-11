@@ -5,7 +5,7 @@ import { business } from "@/lib/business";
 export const metadata: Metadata = {
   title: "Hospital Ambulance Partnerships",
   description:
-    "Meghana Ambulance Service partners with hospitals, nursing homes & clinics in Bangalore for patient transportation and ambulance coordination.",
+    "Meghana Lifecare Ambulance Service partners with hospitals, nursing homes & clinics in Bangalore for patient transportation and ambulance coordination.",
   keywords: [
     "ambulance service for hospitals Bangalore",
     "hospital ambulance tie-up Bangalore",

@@ -17,7 +17,7 @@ export default function AboutSection() {
           <div className="relative aspect-[5/4] overflow-hidden rounded-2xl border border-black/5 bg-navy-900 shadow-sm">
             <Image
               src="/images/gallery/ambulance-hospital-transfer-bangalore.jpg"
-              alt="Meghana Ambulance Service ambulance at hospital — hospital transfer Bangalore"
+              alt="Meghana Lifecare Ambulance Service ambulance at hospital — hospital transfer Bangalore"
               fill
               sizes="(min-width: 1024px) 40vw, 90vw"
               className="object-cover"
@@ -37,7 +37,7 @@ export default function AboutSection() {
             Built for the Moments That Can&apos;t Wait
           </h2>
           <p className="mt-4 leading-relaxed text-ink-700">
-            Meghana Ambulance Service is a 24/7 ambulance service based in
+            Meghana Lifecare Ambulance Service is a 24/7 ambulance service based in
             Bangalore, providing emergency response, ICU/NICU/PICU/CCU
             ambulance transport, hospital transfers, and long-distance
             patient journeys across India. An ambulance call rarely comes at

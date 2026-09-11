@@ -29,7 +29,7 @@ export default function MobileEmergencyBar() {
         target="_blank"
         rel="noopener noreferrer"
         className="flex flex-col items-center justify-center gap-0.5 bg-[#25D366] text-white active:brightness-95"
-        aria-label="Message Meghana Ambulance Service on WhatsApp"
+        aria-label="Message Meghana Lifecare Ambulance Service on WhatsApp"
       >
         <WhatsAppIcon className="h-5 w-5" />
         <span className="text-[11px] font-bold uppercase tracking-wide">WhatsApp</span>

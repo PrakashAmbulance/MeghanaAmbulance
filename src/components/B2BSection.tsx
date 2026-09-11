@@ -26,7 +26,7 @@ export default function B2BSection() {
             Hospital &amp; Healthcare Partnerships
           </h2>
           <p className="mt-4 text-white/75">
-            Meghana Ambulance Service supports healthcare organizations with
+            Meghana Lifecare Ambulance Service supports healthcare organizations with
             patient transportation and ambulance coordination. We work with:
           </p>
           <ul className="mt-4 grid grid-cols-1 gap-2 text-sm text-white/80 sm:grid-cols-2">

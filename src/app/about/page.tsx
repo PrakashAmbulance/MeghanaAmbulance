@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: "About Us",
   description: `About ${business.name} — a 24/7 ambulance provider in Bangalore with experienced drivers and staff support for emergencies and transfers.`,
   keywords: [
-    "about Meghana Ambulance Service",
+    "about Meghana Lifecare Ambulance Service",
     "ambulance company Bangalore",
     "private ambulance service Bangalore",
     "24/7 ambulance provider Bangalore",

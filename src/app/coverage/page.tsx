@@ -6,7 +6,7 @@ import { business, serviceAreas } from "@/lib/business";
 export const metadata: Metadata = {
   title: "Ambulance Coverage Bangalore",
   description:
-    "Meghana Ambulance Service covers 20 areas across Bangalore — RR Nagar, Jayanagar, Koramangala, Whitefield & more. 24/7 emergency, ICU & long-distance ambulance.",
+    "Meghana Lifecare Ambulance Service covers 20 areas across Bangalore — RR Nagar, Jayanagar, Koramangala, Whitefield & more. 24/7 emergency, ICU & long-distance ambulance.",
   keywords: [
     "ambulance coverage Bangalore",
     "ambulance service areas Bangalore",
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/coverage" },
   openGraph: {
     title: "Ambulance Service Coverage — 20 Areas Across Bangalore",
-    description: `Meghana Ambulance Service covers ${serviceAreas.length} areas across Bangalore including ${serviceAreas.slice(0, 5).map((a) => a.name).join(", ")} and more. Available 24/7.`,
+    description: `Meghana Lifecare Ambulance Service covers ${serviceAreas.length} areas across Bangalore including ${serviceAreas.slice(0, 5).map((a) => a.name).join(", ")} and more. Available 24/7.`,
   },
 };
 
@@ -25,7 +25,7 @@ const coverageJsonLd = {
   "@context": "https://schema.org",
   "@type": "WebPage",
   name: "Ambulance Service Coverage Areas in Bangalore",
-  description: `Meghana Ambulance Service covers ${serviceAreas.length} areas across Bangalore. Available 24 hours a day, 7 days a week.`,
+  description: `Meghana Lifecare Ambulance Service covers ${serviceAreas.length} areas across Bangalore. Available 24 hours a day, 7 days a week.`,
   url: `${business.siteUrl}/coverage`,
   about: {
     "@type": "MedicalBusiness",

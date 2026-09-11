@@ -118,7 +118,7 @@ export default function Testimonials() {
         reviewBody: t.text,
         itemReviewed: {
           "@type": "MedicalBusiness",
-          name: "Meghana Ambulance Service",
+          name: "Meghana Lifecare Ambulance Service",
         },
       },
     })),
@@ -139,8 +139,8 @@ export default function Testimonials() {
             Trusted by Families Across Bangalore
           </h2>
           <p className="mt-3 text-ink-500">
-            Real experiences from patients and families who relied on Meghana
-            Ambulance Service during critical moments.
+            Real experiences from patients and families who relied on
+            Meghana Lifecare Ambulance Service during critical moments.
           </p>
           <a
             href={business.googleReviewUrl}

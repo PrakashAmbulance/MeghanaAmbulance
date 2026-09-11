@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------
-// Central business configuration for Meghana Ambulance Service.
+// Central business configuration for Meghana Lifecare Ambulance Service.
 //
 // Every piece of business information used across the site (phone numbers,
 // service list, service areas, WhatsApp number, etc.) lives here so the
@@ -45,8 +45,8 @@ export type ServiceIconName =
   | "patient";
 
 export const business = {
-  name: "Meghana Ambulance Service",
-  legalName: "Meghana Ambulance Service",
+  name: "Meghana Lifecare Ambulance Service",
+  legalName: "Meghana Lifecare Ambulance Service",
   tagline: "24/7 Ambulance Service in Bangalore",
   shortDescription:
     "Reliable ambulance transportation with experienced drivers and trained staff support for emergency, hospital transfer and long-distance patient journeys.",
@@ -64,7 +64,7 @@ export const business = {
   whatsappNumber: "8496840543",
   whatsappNumberIntl: "918496840543",
   whatsappDefaultMessage:
-    "Hello Meghana Ambulance Service, I need ambulance assistance.",
+    "Hello Meghana Lifecare Ambulance Service, I need ambulance assistance.",
 
   email: "", // PLACEHOLDER - add once client confirms a business email
 
@@ -354,7 +354,7 @@ export const services: Service[] = [
     ],
     faqs: [
       {
-        question: "How far can Meghana Ambulance Service travel from Bangalore?",
+        question: "How far can Meghana Lifecare Ambulance Service travel from Bangalore?",
         answer:
           "We support journeys across Karnataka and other parts of India. Share your destination when you call so the route, duration, and requirements can be discussed and confirmed before departure.",
       },
@@ -449,7 +449,7 @@ export const faqs: ServiceFaq[] = [
   {
     question: "How can I book an ambulance in Bangalore?",
     answer:
-      "Call Meghana Ambulance Service directly at " +
+      "Call Meghana Lifecare Ambulance Service directly at " +
       business.phoneDisplay +
       " or " +
       business.secondaryPhoneDisplay +
@@ -463,14 +463,14 @@ export const faqs: ServiceFaq[] = [
       " and share your exact location with a nearby landmark — our team dispatches based on where you are, so you don't need to search for the nearest ambulance yourself. We cover 20 areas across Bangalore and are reachable 24/7.",
   },
   {
-    question: "Which areas in Bangalore does Meghana Ambulance Service cover?",
+    question: "Which areas in Bangalore does Meghana Lifecare Ambulance Service cover?",
     answer:
       "We cover 20 areas across Bangalore: RR Nagar, Vijayanagar, Nagarbhavi, Kengeri, Rajajinagar, Yeshwanthpur, Peenya, RT Nagar, Hebbal, Yelahanka, Jayanagar, JP Nagar, BTM Layout, Bannerghatta Road, HSR Layout, Electronic City, Koramangala, Indiranagar, Marathahalli, and Whitefield. Call us to confirm coverage for your exact pickup location.",
   },
   {
     question: "Is ambulance service available in RR Nagar / Rajarajeshwari Nagar?",
     answer:
-      "Yes, Meghana Ambulance Service covers Rajarajeshwari Nagar (RR Nagar) and the surrounding West Bangalore areas including Vijayanagar, Nagarbhavi, and Kengeri. Call " +
+      "Yes, Meghana Lifecare Ambulance Service covers Rajarajeshwari Nagar (RR Nagar) and the surrounding West Bangalore areas including Vijayanagar, Nagarbhavi, and Kengeri. Call " +
       business.phoneDisplay +
       " for immediate assistance.",
   },
@@ -486,7 +486,7 @@ export const faqs: ServiceFaq[] = [
   {
     question: "Is ambulance service available in Koramangala, HSR Layout, and Electronic City?",
     answer:
-      "Yes, Meghana Ambulance Service covers Koramangala, HSR Layout, Electronic City, and nearby South-East Bangalore areas. Our team is reachable 24/7 at " +
+      "Yes, Meghana Lifecare Ambulance Service covers Koramangala, HSR Layout, Electronic City, and nearby South-East Bangalore areas. Our team is reachable 24/7 at " +
       business.phoneDisplay +
       ".",
   },
@@ -513,21 +513,21 @@ export const faqs: ServiceFaq[] = [
       "NICU, PICU, and CCU ambulance support are available subject to vehicle and equipment availability. Call our team to discuss your specific requirement — neonatal, pediatric critical-care, or cardiac-care — before booking.",
   },
   {
-    question: "Is Meghana Ambulance Service available 24 hours a day?",
+    question: "Is Meghana Lifecare Ambulance Service available 24 hours a day?",
     answer:
-      "Yes, Meghana Ambulance Service is available 24 hours a day, 7 days a week, including weekends and public holidays. Call " +
+      "Yes, Meghana Lifecare Ambulance Service is available 24 hours a day, 7 days a week, including weekends and public holidays. Call " +
       business.phoneDisplay +
       " or " +
       business.secondaryPhoneDisplay +
       " at any time.",
   },
   {
-    question: "Can hospitals and clinics partner with Meghana Ambulance Service?",
+    question: "Can hospitals and clinics partner with Meghana Lifecare Ambulance Service?",
     answer:
       "Yes. We work with hospitals, nursing homes, clinics, diagnostic centres, and other healthcare organizations in Bangalore on patient transportation and ambulance coordination. Use the Hospital Partnerships form or call our team to start a conversation.",
   },
   {
-    question: "How do I contact Meghana Ambulance Service?",
+    question: "How do I contact Meghana Lifecare Ambulance Service?",
     answer:
       "Call " +
       business.phoneDisplay +

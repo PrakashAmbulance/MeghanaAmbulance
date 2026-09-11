@@ -55,8 +55,8 @@ export default function WhyChooseUs() {
             What You Get With Every Ambulance We Send
           </h2>
           <p className="mt-3 text-white/70">
-            No surprises when it matters most — here's exactly what's behind
-            every call to Meghana Ambulance Service.
+            No surprises when it matters most — here&apos;s exactly what&apos;s behind
+            every call to Meghana Lifecare Ambulance Service.
           </p>
         </div>
         <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
