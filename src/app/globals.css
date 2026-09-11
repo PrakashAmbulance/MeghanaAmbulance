@@ -63,23 +63,25 @@ html {
   overflow-x: hidden;
 }
 
-/* Ambulance beacon strobe: hard red/blue flash, like a real emergency light. */
+/* Ambulance beacon strobe: hard red/blue flash, like a real emergency light.
+   Animates `filter` (GPU-compositable) instead of background-color/box-shadow
+   so the strobe doesn't repaint on the main thread every frame — hue-rotate
+   on the red base color lands close to the blue accent automatically. */
 @keyframes siren-strobe {
   0%, 45% {
-    background-color: var(--color-emergency-600);
-    box-shadow: 0 0 12px 3px rgba(220, 38, 38, 0.7);
+    filter: hue-rotate(0deg);
   }
   50%, 95% {
-    background-color: var(--color-medblue-600);
-    box-shadow: 0 0 12px 3px rgba(29, 111, 216, 0.7);
+    filter: hue-rotate(214deg);
   }
   100% {
-    background-color: var(--color-emergency-600);
-    box-shadow: 0 0 12px 3px rgba(220, 38, 38, 0.7);
+    filter: hue-rotate(0deg);
   }
 }
 
 .siren-beacon {
+  background-color: var(--color-emergency-600);
+  box-shadow: 0 0 12px 3px rgba(220, 38, 38, 0.7);
   animation: siren-strobe 1s steps(1, end) infinite;
 }
 
