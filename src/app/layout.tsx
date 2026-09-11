@@ -89,6 +89,9 @@ export const metadata: Metadata = {
     description: business.shortDescription,
     images: ["/images/og-image.png"],
   },
+  verification: {
+    google: "5QfoxkPmRWTnKi8P1C0aDeeqI2E_wcFIAQ1naHGQdtc",
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
