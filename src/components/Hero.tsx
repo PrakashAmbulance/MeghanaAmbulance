@@ -75,8 +75,7 @@ export default function Hero() {
 
   return (
     <section
-      className="relative overflow-hidden bg-navy-950"
-      style={{ minHeight: "calc(100svh - 64px)" }}
+      className="relative min-h-[520px] overflow-hidden bg-navy-950 md:[min-height:calc(100svh-64px)]"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
       aria-label="Hero banner"
@@ -124,10 +123,7 @@ export default function Hero() {
       />
 
       {/* Content */}
-      <div
-        className="container-page relative flex flex-col justify-center py-8 pb-14 sm:py-16 lg:max-w-3xl"
-        style={{ minHeight: "calc(100svh - 64px)" }}
-      >
+      <div className="container-page relative flex min-h-[520px] flex-col justify-center py-8 pb-14 sm:py-16 md:[min-height:calc(100svh-64px)] lg:max-w-3xl">
         {/* Badge */}
         <span className="inline-flex w-fit items-center gap-1.5 rounded-full bg-white/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-white/90 ring-1 ring-white/20 backdrop-blur-sm sm:px-3.5 sm:py-1.5 sm:text-xs">
           <ClockIcon className="h-3 w-3 text-medblue-300 sm:h-3.5 sm:w-3.5" />
