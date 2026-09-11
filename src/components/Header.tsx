@@ -108,7 +108,7 @@ export default function Header() {
             className="siren-beacon relative inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-full text-white lg:hidden"
             aria-label={`Call Ambulance now at ${business.phoneDisplay}`}
           >
-            <span className="pointer-events-none absolute inset-0 rounded-full bg-emergency-500 opacity-75 animate-ping" />
+            <span className="animate-ping-contained pointer-events-none absolute inset-0 rounded-full bg-emergency-500 opacity-75" />
             <SirenIcon className="relative h-5 w-5" />
           </a>
         </div>

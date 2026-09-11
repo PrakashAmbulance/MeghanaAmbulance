@@ -79,6 +79,21 @@ html {
   }
 }
 
+/* Smaller ping ring for the header's mobile call button — Tailwind's default
+   animate-ping scales to 2x, which is wide enough to spill past the viewport
+   edge on mobile (the button sits close to the header's right padding) and
+   cause a few pixels of horizontal overflow. This caps the growth to a size
+   that fits within the available space in every direction. */
+@keyframes ping-contained {
+  75%, 100% {
+    transform: scale(1.35);
+    opacity: 0;
+  }
+}
+.animate-ping-contained {
+  animation: ping-contained 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
 .siren-beacon {
   background-color: var(--color-emergency-600);
   box-shadow: 0 0 12px 3px rgba(220, 38, 38, 0.7);
