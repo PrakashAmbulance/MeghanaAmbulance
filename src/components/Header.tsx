@@ -123,12 +123,17 @@ export default function Header() {
         onClick={() => setOpen(false)}
       />
 
-      {/* Off-canvas drawer, slides in from the left */}
-      <nav
+      {/* Off-canvas drawer, slides in from the left. role="dialog" belongs
+          on this container (a <div>, whose role the ARIA spec lets you
+          reassign freely) rather than on a <nav> — <nav>'s implicit
+          "navigation" role only permits a restricted set of override
+          roles, and "dialog" isn't one of them. The actual link list gets
+          its own <nav> landmark below. */}
+      <div
         id="mobile-nav"
-        aria-label="Mobile"
         role="dialog"
         aria-modal="true"
+        aria-label="Mobile menu"
         className={`fixed inset-y-0 left-0 z-50 w-[85%] max-w-xs transform bg-white shadow-2xl transition-transform duration-300 ease-in-out lg:hidden ${
           open ? "translate-x-0" : "-translate-x-full"
         }`}
@@ -150,29 +155,31 @@ export default function Header() {
             <CloseIcon className="h-6 w-6" />
           </button>
         </div>
-        <ul className="flex flex-col gap-1 px-3 py-4">
-          {navLinks.map((link) => {
-            const active =
-              link.href === "/"
-                ? pathname === "/"
-                : pathname?.startsWith(link.href);
-            return (
-              <li key={link.href}>
-                <Link
-                  href={link.href}
-                  onClick={() => setOpen(false)}
-                  className={`block rounded-lg px-3 py-3 text-base font-semibold ${
-                    active
-                      ? "bg-medblue-50 text-navy-900"
-                      : "text-ink-700 hover:bg-medblue-50 hover:text-navy-900"
-                  }`}
-                >
-                  {link.label}
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
+        <nav aria-label="Mobile">
+          <ul className="flex flex-col gap-1 px-3 py-4">
+            {navLinks.map((link) => {
+              const active =
+                link.href === "/"
+                  ? pathname === "/"
+                  : pathname?.startsWith(link.href);
+              return (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    onClick={() => setOpen(false)}
+                    className={`block rounded-lg px-3 py-3 text-base font-semibold ${
+                      active
+                        ? "bg-medblue-50 text-navy-900"
+                        : "text-ink-700 hover:bg-medblue-50 hover:text-navy-900"
+                    }`}
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        </nav>
         <div className="mt-2 border-t border-black/5 px-4 py-4">
           <a
             href={buildTelUrl(business.phone)}
@@ -183,7 +190,7 @@ export default function Header() {
             Call Ambulance
           </a>
         </div>
-      </nav>
+      </div>
     </>
   );
 }
