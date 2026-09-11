@@ -82,7 +82,7 @@ export default function RequestAmbulanceForm() {
   }
 
   return (
-    <form onSubmit={onSubmit} noValidate className="space-y-4" id="request-ambulance">
+    <form onSubmit={onSubmit} noValidate className="space-y-4">
       <div className="rounded-lg bg-emergency-100 px-4 py-3 text-sm font-semibold text-emergency-700">
         For immediate emergencies, please call us directly at{" "}
         <a href={buildTelUrl(business.phone)} className="underline">

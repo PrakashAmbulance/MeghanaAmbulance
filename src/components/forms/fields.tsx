@@ -1,4 +1,4 @@
-import type { InputHTMLAttributes, TextareaHTMLAttributes, SelectHTMLAttributes } from "react";
+import { useId, type InputHTMLAttributes, type TextareaHTMLAttributes, type SelectHTMLAttributes } from "react";
 
 const baseInputClass =
   "block w-full rounded-lg border border-black/15 bg-white px-3.5 py-2.5 text-sm text-ink-900 placeholder:text-ink-300 shadow-sm transition-colors focus:border-medblue-500 focus:outline-none";
@@ -45,11 +45,12 @@ export function Select(props: SelectHTMLAttributes<HTMLSelectElement>) {
 
 /** Hidden honeypot field for lightweight spam protection. */
 export function Honeypot({ value, onChange }: { value: string; onChange: (v: string) => void }) {
+  const id = useId();
   return (
     <div className="hidden" aria-hidden="true">
-      <label htmlFor="website">Website</label>
+      <label htmlFor={id}>Website</label>
       <input
-        id="website"
+        id={id}
         name="website"
         type="text"
         tabIndex={-1}

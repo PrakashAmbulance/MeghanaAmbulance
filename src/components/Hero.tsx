@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "@/components/StaticImage";
 import Link from "next/link";
 import { useState, useEffect, useCallback } from "react";
 import { business, buildTelUrl, buildWhatsAppUrl } from "@/lib/business";
@@ -9,6 +8,7 @@ import { PhoneIcon, WhatsAppIcon, AmbulanceRequestIcon, ClockIcon } from "@/comp
 const slides = [
   {
     src: "/images/hero/hero-ambulance-india.jpg",
+    srcMobile: "/images/hero/hero-ambulance-india-mobile.jpg",
     alt: "Indian advanced life support ambulance on road — Meghana Ambulance Service Bangalore",
     headline: "24/7 Ambulance Service in Bangalore",
     sub: "Experienced drivers & staff nurse support — available any time, day or night.",
@@ -16,6 +16,7 @@ const slides = [
   },
   {
     src: "/images/hero/hero-city-road.jpg",
+    srcMobile: "/images/hero/hero-city-road-mobile.jpg",
     alt: "Ambulance responding on city highway — Meghana Ambulance Service Bangalore",
     headline: "Emergency & ICU Ambulance, Always Ready",
     sub: "Hospital transfers, long-distance journeys & emergency response across 20 areas of Bangalore.",
@@ -23,6 +24,7 @@ const slides = [
   },
   {
     src: "/images/hero/hero-ambulance-fleet.jpg",
+    srcMobile: "/images/hero/hero-ambulance-fleet-mobile.jpg",
     alt: "Ambulance fleet with Star of Life — Meghana Ambulance Service Bangalore",
     headline: "Hospital Transfers & Patient Transport",
     sub: "Hospital-to-hospital, hospital-to-home, and long-distance journeys across Karnataka & India.",
@@ -89,14 +91,21 @@ export default function Hero() {
           }`}
           aria-hidden={i !== active}
         >
-          <Image
-            src={s.src}
-            alt={s.alt}
-            fill
-            priority={i === 0}
-            sizes="100vw"
-            className={`object-cover ${s.position}`}
-          />
+          {/* Plain <picture>/<img>, not next/image: images.unoptimized is
+              required for static export, so next/image can't generate real
+              per-device variants — this <picture> serves an actual smaller
+              file on mobile instead of the desktop-sized original. */}
+          <picture>
+            <source media="(max-width: 767px)" srcSet={s.srcMobile} />
+            <img
+              src={s.src}
+              alt={s.alt}
+              loading={i === 0 ? "eager" : "lazy"}
+              fetchPriority={i === 0 ? "high" : "low"}
+              decoding={i === 0 ? "sync" : "async"}
+              className={`h-full w-full object-cover ${s.position}`}
+            />
+          </picture>
         </div>
       ))}
 
